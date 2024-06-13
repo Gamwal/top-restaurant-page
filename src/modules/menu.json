@@ -1,0 +1,17 @@
+{
+  "Appetizers": [
+    ["Bruschetta", "$8.00"],
+    ["Stuffed Mushrooms", "$9.50"],
+    ["Garlic Bread", "$5.00"]
+  ],
+  "Main Courses": [
+    ["Grilled Salmon", "$18.00"],
+    ["Steak Frites", "$22.50"],
+    ["Chicken Alfredo", "$16.00"]
+  ],
+  "Desserts": [
+    ["Cheesecake", "$7.00"],
+    ["Tiramisu", "$8.00"],
+    ["Chocolate Mousse", "$6.50"]
+  ]
+}
