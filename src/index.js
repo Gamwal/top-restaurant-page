@@ -25,13 +25,23 @@ const contentContainer = document.getElementById('content');
 
 const navBar= document.getElementById('navbar');
 navBar.addEventListener('click', (event) => {
-  resetPage();
-  highlightTab(event.target);
-  if (event.target.textContent === 'HOME'){
-    contentContainer.appendChild(homePage());
-  } else if (event.target.textContent === 'MENU') {
-    contentContainer.appendChild(restaurantMenu());
-  } else if (event.target.textContent === 'LOCATIONS') {
-    
+  if (event.target.tagName === 'BUTTON') {
+    resetPage();
+    highlightTab(event.target);
+    if (event.target.textContent === 'HOME'){
+      contentContainer.appendChild(homePage());
+    } else if (event.target.textContent === 'MENU') {
+      contentContainer.appendChild(restaurantMenu());
+    } else if (event.target.textContent === 'LOCATIONS') {
+      
+    } else if (event.target.textContent === 'CONTACT US') {
+      
+    }
   }
+})
+
+// To load homepage by default
+window.addEventListener('load', () => {
+  const homeButton = document.querySelector('#navbar button:first-child');
+  homeButton.click();
 })

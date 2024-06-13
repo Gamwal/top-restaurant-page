@@ -1,75 +1,93 @@
 :root {
-  --light-color: rgba(0, 0, 0, 5%);
-  --dark-color: rgba(0, 0, 0, 20%);
-  --darker-color: rgba(0, 0, 0, 90%);
-  --default-border-radius: 0.2rem;
+  --bg-light: rgba(0, 0, 0, 0.05);
+  --bg-dark: rgba(255, 255, 255, 1);
+  --bg-darker: rgba(0, 0, 0, 0.9);
+  --border-radius: 0.5rem;
 }
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 16px;
-  background-color: var(--light-color);
+  /* background-color: var(--bg-light); */
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
   height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/eaters-collective-unsplash.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 body > h1 {
-  box-sizing: border-box;
-  padding: 1rem 1rem;
+  padding: 1rem;
   font-size: 3rem;
 }
 
+#navbar {
+  display: flex;
+  gap: 1rem;
+}
+
 #navbar button {
-  background-color: var(--dark-color);
-  border: none;
-  border-radius: var(--default-border-radius);
-  height: 2rem;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--bg-darker);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  height: 3rem;
   width: 10rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 300;
+  border-bottom: none;
 }
 
 #navbar button.active-tab {
-  background-color: var(--darker-color);
-  color: rgb(255, 255, 255);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  background-color: var(--bg-darker);
+  color: white;
 }
 
 #content {
   flex-grow: 1;
+  width: 80vw;
+  border: 1px solid var(--bg-darker);
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
   display: flex;
+  padding: 1rem;
 }
 
 #homepage {
-  box-sizing: border-box;
-  background: url('./images/eaters-collective-unsplash.jpg') no-repeat center center;
+  flex-grow: 1;
   width: 80vw;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  padding: 1rem 1rem;
-  flex-grow: 1;
-  border-radius: var(--default-border-radius);;
-  border: 1px solid var(--darker-color);
-  margin-bottom: 0.5rem;
+  padding: 1rem;
 }
 
 footer {
-  box-sizing: border-box;
-  background-color: var(--dark-color);
   width: 80vw;
-  padding: 1rem 1rem;
+  padding: 1rem;
   text-align: center;
-  border-radius: var(--default-border-radius);
+  background-color: var(--bg-dark);
+  border-radius: var(--border-radius);
 }

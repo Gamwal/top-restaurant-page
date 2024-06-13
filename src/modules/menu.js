@@ -1,4 +1,4 @@
-import menuItems from "./menu.json";
+import menuItems from "./jsonfiles/menu.json";
 
 export default function restaurantMenu() {
   const menuContainer = document.createElement('div');

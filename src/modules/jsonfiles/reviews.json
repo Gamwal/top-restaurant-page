@@ -1,0 +1,34 @@
+{
+  "reviews": [
+    {
+      "reviewer": "John Doe",
+      "date": "2024-05-01",
+      "rating": 5,
+      "comments": "Amazing experience! The food was delicious, and the staff were incredibly friendly and attentive. Highly recommend!"
+    },
+    {
+      "reviewer": "Jane Smith",
+      "date": "2024-04-27",
+      "rating": 4,
+      "comments": "Great atmosphere and tasty dishes. The service was a bit slow, but overall a very good dining experience."
+    },
+    {
+      "reviewer": "Michael Brown",
+      "date": "2024-04-20",
+      "rating": 3,
+      "comments": "The food was average, and the portions were smaller than expected. The ambiance was nice, but I felt it was a bit overpriced."
+    },
+    {
+      "reviewer": "Emily Johnson",
+      "date": "2024-04-15",
+      "rating": 5,
+      "comments": "Absolutely loved it! The chef's special was out of this world, and the desserts were to die for. Will definitely be back!"
+    },
+    {
+      "reviewer": "Chris Lee",
+      "date": "2024-04-10",
+      "rating": 2,
+      "comments": "Not impressed. The food was bland and the service was subpar. The wait time was too long, and it was quite noisy."
+    }
+  ]
+}
