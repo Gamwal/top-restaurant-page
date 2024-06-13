@@ -1,21 +1,37 @@
 import './style.css';
+import homePage from './modules/home';
+import restaurantMenu from './modules/menu';
 
-const contentContainer = document.getElementById("content");
+const headerSection = document.getElementById('header');
+const restaurantName = document.createElement('h1');
+restaurantName.textContent = "Gojo's Bistroe"
+document.body.insertBefore(restaurantName, headerSection);
 
-const banner = document.createElement('div');
-banner.id = "banner-box"
+function resetPage(){
+  const contentSection = document.getElementById('content');
+  contentSection.textContent = "";
 
-const headerLine = document.createElement('h1');
-headerLine.textContent = "Gojo's Bistroe"
+  const navButtons = document.querySelectorAll('#navbar button');
+  navButtons.forEach(button => {
+    button.classList.remove('active-tab');
+  });
+}
 
-const paragraphOne = document.createElement('p');
-paragraphOne.textContent = "Looking for a restaurant near you?";
+function highlightTab(button) {
+  button.classList.add('active-tab');
+}
 
-const paragraphTwo = document.createElement('p');
-paragraphTwo.textContent = "Look no further";
+const contentContainer = document.getElementById('content');
 
-banner.appendChild(headerLine)
-banner.appendChild(paragraphOne);
-banner.appendChild(paragraphTwo);
-
-contentContainer.appendChild(banner);
+const navBar= document.getElementById('navbar');
+navBar.addEventListener('click', (event) => {
+  resetPage();
+  highlightTab(event.target);
+  if (event.target.textContent === 'HOME'){
+    contentContainer.appendChild(homePage());
+  } else if (event.target.textContent === 'MENU') {
+    contentContainer.appendChild(restaurantMenu());
+  } else if (event.target.textContent === 'LOCATIONS') {
+    
+  }
+})
