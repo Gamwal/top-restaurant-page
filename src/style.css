@@ -1,3 +1,10 @@
+:root {
+  --light-color: rgba(0, 0, 0, 5%);
+  --dark-color: rgba(0, 0, 0, 20%);
+  --darker-color: rgba(0, 0, 0, 90%);
+  --default-border-radius: 0.2rem;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,20 +12,46 @@
 
 html {
   font-size: 16px;
-  background-color: rgb(253, 245, 230);
+  background-color: var(--light-color);
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 1rem;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
-#banner-box {
-  height: 80vh;
+body > h1 {
+  box-sizing: border-box;
+  padding: 1rem 1rem;
+  font-size: 3rem;
+}
+
+#navbar button {
+  background-color: var(--dark-color);
+  border: none;
+  border-radius: var(--default-border-radius);
+  height: 2rem;
+  width: 10rem;
+}
+
+#navbar button.active-tab {
+  background-color: var(--darker-color);
+  color: rgb(255, 255, 255);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#content {
+  flex-grow: 1;
+  display: flex;
+}
+
+#homepage {
+  box-sizing: border-box;
   background: url('./images/eaters-collective-unsplash.jpg') no-repeat center center;
-  /* color: white; */
   width: 80vw;
   background-size: cover;
   display: flex;
@@ -26,4 +59,17 @@ body {
   justify-content: center;
   gap: 2rem;
   padding: 1rem 1rem;
+  flex-grow: 1;
+  border-radius: var(--default-border-radius);;
+  border: 1px solid var(--darker-color);
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  box-sizing: border-box;
+  background-color: var(--dark-color);
+  width: 80vw;
+  padding: 1rem 1rem;
+  text-align: center;
+  border-radius: var(--default-border-radius);
 }
