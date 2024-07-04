@@ -1,5 +1,7 @@
 import menuItems from "./jsonfiles/menu.json";
 
+// function 
+
 export default function restaurantMenu() {
   const menuContainer = document.createElement('div');
   menuContainer.id = 'menu-container';
