@@ -1,6 +1,7 @@
 import './style.css';
 import homePage from './modules/home';
 import restaurantMenu from './modules/menu';
+import contactUs from './modules/contact-us';
 
 const headerSection = document.getElementById('header');
 const restaurantName = document.createElement('h1');
@@ -32,10 +33,8 @@ navBar.addEventListener('click', (event) => {
       contentContainer.appendChild(homePage());
     } else if (event.target.textContent === 'MENU') {
       contentContainer.appendChild(restaurantMenu());
-    } else if (event.target.textContent === 'LOCATIONS') {
-      
     } else if (event.target.textContent === 'CONTACT US') {
-      
+      contentContainer.appendChild(contactUs());
     }
   }
 })
