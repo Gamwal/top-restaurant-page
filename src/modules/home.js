@@ -19,7 +19,6 @@ export default function homePage() {
   const paragraphThree = document.createElement('p');
   paragraphThree.textContent = "Open Everyday - 8AM to 8PM";
 
-
   introText.appendChild(paragraphOne);
   introText.appendChild(paragraphTwo);
   introText.appendChild(paragraphThree);
@@ -51,16 +50,37 @@ export default function homePage() {
   const reviewsTitleDiv = document.createElement('h2');
   reviewsTitleDiv.textContent = "WHAT OUR CUSTOMERS SAY";
 
+  const reviewsDivBody = document.createElement('div');
+
   reviewsDiv.appendChild(reviewsTitleDiv);
+  reviewsDiv.appendChild(reviewsDivBody);
 
-  Object.keys(reviews).forEach(item => {
-    const para = document.createElement('p');
-    Object.keys(reviews[item]).forEach(review => {
-      para.textContent = review;
-    });
-    reviewsDiv.appendChild(para);
+  Object.keys(reviews.reviews).forEach(item => {
+    const individualReview = document.createElement('div');
+
+    const reviewer = document.createElement('p');
+    reviewer.textContent = reviews.reviews[item].reviewer;
+
+    const comments = document.createElement('p');
+    comments.textContent = reviews.reviews[item].comments;
+
+    const rating = document.createElement('p');
+    rating.textContent = `${reviews.reviews[item].rating}/5`;
+
+    const date = document.createElement('p');
+    date.textContent = reviews.reviews[item].date;
+
+    const firsttLine = document.createElement('div');
+
+    firsttLine.appendChild(reviewer);
+    firsttLine.appendChild(rating);
+
+    individualReview.appendChild(firsttLine);
+    individualReview.appendChild(comments);
+    individualReview.appendChild(date);
+    
+    reviewsDivBody.appendChild(individualReview);
   })
-
 
   homeContainer.appendChild(introDiv);
   homeContainer.appendChild(aboutDiv);
